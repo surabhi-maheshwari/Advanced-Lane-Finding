@@ -307,10 +307,25 @@ white_clip = clip1.fl_image(process_image)
 
 I really enjoyed working on this project, though it was little challenging but it was fun.
 
-The drawbacks of the above process can be as follows:
+### Issues faced:
+
+a. One of the challenging parts was to figure out best src and dst coordinates so that it works with all the images in the video.
+
+b. Finding best parameters for bianry mask calculation and removing the  noise from the image so that actual lanes are identified and nothing else.
+
+
+### The drawbacks of the above process can be as follows:
 
 a. It might not work in very curvy roads as in the harder challenging video.
 
 b. The pipeline works really well near the camera but there are minor failures on the edges or areas far from the camera. It sometimes cannot completely detect the lane perfectly and might go out of the bounds because of the trapezoid source and destination vertices.
 
+### Possible improvements to the pipeline can be:
+    a. Short length of lanes can be taken into consideration because the harder challenging video has shorter lanes with curves and this approach might not work there.
+    b. Another possible suggestion is to use dynamic area of selection of src and dst coordnates for prespective transform so that i can work for very curvy roads.
+  
+### Scenarios where the pipeline might fail
+a. The pipeline might not pass in narrow curvy road as stated above or at a 90 to 180 degree exit road.
+b. Binary thresholding might fail if there is an object in the center of the road or edges which are not lanes.
+c. If the car is not driving within lanes, then this pipeline might not be able to work.
 
