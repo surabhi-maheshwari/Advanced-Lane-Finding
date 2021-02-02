@@ -240,9 +240,9 @@ Sliding Window
 
 Next step is to create a highlighted window around the lanes and fit the lane boundary as shown in following image:
 
-[image12]: output_images/fit_lane_boundary.png
+[image17]: output_images/fit_lane_boundary.png
 Highlighted lane 
-![alt text][image12]
+![alt text][image17]
 
 
 7. Determine the curvature of the lane and vehicle position with respect to center.
